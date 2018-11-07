@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HietalasALMBank", "HietalasALMBank\HietalasALMBank.csproj", "{9388F648-E26D-492F-8ADF-D10B2BCA921A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9388F648-E26D-492F-8ADF-D10B2BCA921A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9388F648-E26D-492F-8ADF-D10B2BCA921A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9388F648-E26D-492F-8ADF-D10B2BCA921A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9388F648-E26D-492F-8ADF-D10B2BCA921A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B90D559B-4F7F-4D07-849C-F8DB17AE6850}
+	EndGlobalSection
+EndGlobal
