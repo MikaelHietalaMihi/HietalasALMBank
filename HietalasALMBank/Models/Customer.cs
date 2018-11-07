@@ -10,5 +10,6 @@ namespace HietalasALMBank.Models
         public int CustomerID { get; set; }
         public string Firstname { get; set; }
         public string Lastname  { get; set; }
+        public List<Account> AccountList { get; set; }
     }
 }
