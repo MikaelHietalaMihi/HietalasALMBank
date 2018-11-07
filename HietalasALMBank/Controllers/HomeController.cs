@@ -10,9 +10,16 @@ namespace HietalasALMBank.Controllers
 {
     public class HomeController : Controller
     {
+        private List<Customer> data;
+
+        public HomeController()
+        {
+            data = Startup.Dummydata;
+        }
+
         public IActionResult Index()
         {
-            return View();
+            return View(data);
         }      
 
         public IActionResult Error()
