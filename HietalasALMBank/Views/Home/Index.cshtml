@@ -2,4 +2,53 @@
     ViewData["Title"] = "Home Page";
 }
 
-<h1>Index</h1>
+
+@model List<HietalasALMBank.Models.Customer>
+
+
+<h1>Mikael Hietalas ALM Bank</h1>
+
+<div class="container">      
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Account ID</th>
+                <th>Balance</th>
+                <th>Account ID</th>
+                <th>Balance</th>
+            </tr>
+
+            @foreach (var customer in Model)
+            {
+                <tr>
+                    <td>@customer.Firstname</td>
+                    <td>@customer.Lastname</td>
+                    @foreach (var account in customer.AccountList)
+                    {
+                        <td>@account.AccountNumber</td>
+                        <td>@account.Balance :-</td>
+                    }
+                </tr>
+            }
+
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

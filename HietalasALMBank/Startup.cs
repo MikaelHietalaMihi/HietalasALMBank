@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using HietalasALMBank.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -11,6 +12,56 @@ namespace HietalasALMBank
 {
     public class Startup
     {
+        public static List<Customer> Dummydata = new List<Customer>() {
+
+            new Customer(){
+                CustomerID=1,
+                Firstname="Mikael",
+                Lastname="Hietala",
+                AccountList= new List<Account>(){
+                    new Account(){
+                        AccountNumber="1",
+                        Balance=10
+                    },
+                    new Account(){
+                        AccountNumber="2",
+                        Balance=20
+                    }
+                }
+            },
+             new Customer(){
+                CustomerID=1,
+                Firstname="Göran",
+                Lastname="Illern",
+                AccountList= new List<Account>(){
+                    new Account(){
+                        AccountNumber="3",
+                        Balance=30
+                    },
+                    new Account(){
+                        AccountNumber="4",
+                        Balance=40
+                    }
+                }
+            },
+              new Customer(){
+                CustomerID=1,
+                Firstname="Nisse",
+                Lastname="Finsko",
+                AccountList= new List<Account>(){
+                    new Account(){
+                        AccountNumber="5",
+                        Balance=50
+                    },
+                    new Account(){
+                        AccountNumber="6",
+                        Balance=60
+                    }
+                }
+            }
+        };
+
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
