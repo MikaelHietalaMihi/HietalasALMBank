@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace HietalasALMBank.Models
 {
-    public class Account
+    public class WithdrawDepositViewModel
     {
+        public double Amount { get; set; }
         public string AccountNumber { get; set; }
-        public double Balance { get; set; }
     }
 }

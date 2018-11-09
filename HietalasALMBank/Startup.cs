@@ -20,11 +20,11 @@ namespace HietalasALMBank
                 Lastname="Hietala",
                 AccountList= new List<Account>(){
                     new Account(){
-                        Id=1,
+                        AccountNumber="1",
                         Balance=10
                     },
                     new Account(){
-                        Id=2,
+                        AccountNumber="2",
                         Balance=20
                     }
                 }
@@ -35,11 +35,11 @@ namespace HietalasALMBank
                 Lastname="Illern",
                 AccountList= new List<Account>(){
                     new Account(){
-                        Id=3,
+                        AccountNumber="3",
                         Balance=30
                     },
                     new Account(){
-                        Id=4,
+                        AccountNumber="4",
                         Balance=40
                     }
                 }
@@ -50,11 +50,11 @@ namespace HietalasALMBank
                 Lastname="Finsko",
                 AccountList= new List<Account>(){
                     new Account(){
-                        Id=5,
+                        AccountNumber="5",
                         Balance=50
                     },
                     new Account(){
-                        Id=6,
+                        AccountNumber="6",
                         Balance=60
                     }
                 }
