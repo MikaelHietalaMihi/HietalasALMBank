@@ -7,20 +7,24 @@
     <h2>Överföringar</h2>
 
     <div asp-validation-summary="All"></div>
-
+    <span>@TempData["response"]</span>
+    
+    
     <form asp-action="Transfer" method="post">
 
         <label>Från konto</label>
-        <input type="text" value="@Model.FromAccountNumber" />
-        
+        <input type="text" asp-for="@Model.FromAccountNumber" value="@Model.FromAccountNumber" />
+        <span>@TempData["fromNull"]</span><br />
+
         <label>Till konto</label>
-        <input type="text" value="@Model.ToAccountNumber" />
-        
+        <input type="text" asp-for="@Model.ToAccountNumber" value="@Model.ToAccountNumber" />
+        <span>@TempData["toNull"]</span><br />
+
         <label>Summa konto</label>
-        <input min="1" type="text" value="@Model.Amount" />
+        <input min="1" type="text" asp-for="@Model.Amount" value="@Model.Amount" /><br />
 
-        <input type="submit" value="Skicka överföring"/>
+        <input type="submit" value="Skicka överföring" />
 
-</form>
+    </form>
 
 </div>

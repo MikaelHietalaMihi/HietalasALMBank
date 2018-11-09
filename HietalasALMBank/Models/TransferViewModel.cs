@@ -9,11 +9,11 @@ namespace HietalasALMBank.Models
     public class TransferViewModel
     {
 
-        [Required(ErrorMessage = "Ett kontonummer är obligatoriskt")]
+        [Required(ErrorMessage = "Ett från-kontonummer är obligatoriskt")]
         public string FromAccountNumber { get; set; }
-        [Required(ErrorMessage = "Ett kontonummer är obligatoriskt")]
+        [Required(ErrorMessage = "Ett till-kontonummer är obligatoriskt")]
         public string ToAccountNumber { get; set; }
-        [Range(1, double.MaxValue)]
+        [Range(1, double.MaxValue, ErrorMessage = "Minsta överföringen är 1kr")]
         public double Amount { get; set; }
 
     }
