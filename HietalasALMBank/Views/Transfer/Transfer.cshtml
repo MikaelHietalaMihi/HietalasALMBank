@@ -1,4 +1,4 @@
-﻿
+﻿@model TransferViewModel
 @{
     ViewData["Title"] = "Transfer";
 }
@@ -6,19 +6,20 @@
 <div class="container">
     <h2>Överföringar</h2>
 
+    <div asp-validation-summary="All"></div>
+
     <form asp-action="Transfer" method="post">
 
         <label>Från konto</label>
-        <input type="text" />
+        <input type="text" value="@Model.FromAccountNumber" />
         
         <label>Till konto</label>
-        <input type="text" />
+        <input type="text" value="@Model.ToAccountNumber" />
         
         <label>Summa konto</label>
-        <input type="text" />
+        <input min="1" type="text" value="@Model.Amount" />
 
         <input type="submit" value="Skicka överföring"/>
-
 
 </form>
 
