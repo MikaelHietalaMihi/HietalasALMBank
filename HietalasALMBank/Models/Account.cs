@@ -9,5 +9,17 @@ namespace HietalasALMBank.Models
     {
         public string AccountNumber { get; set; }
         public double Balance { get; set; }
+
+        public bool Transfer(Account account, double amount)
+        {
+            if (Balance - amount < 0)
+            {
+                return false;
+            }
+
+            Balance -= amount;
+            account.Balance += amount;
+            return true;
+        }
     }
 }

@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewData["Title"] = "Transfer";
+}
+
+<div class="container">
+    <h2>Överföringar</h2>
+
+    <form asp-action="Transfer" method="post">
+
+        <label>Från konto</label>
+        <input type="text" />
+        
+        <label>Till konto</label>
+        <input type="text" />
+        
+        <label>Summa konto</label>
+        <input type="text" />
+
+        <input type="submit" value="Skicka överföring"/>
+
+
+</form>
+
+</div>

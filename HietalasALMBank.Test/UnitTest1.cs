@@ -78,6 +78,33 @@ namespace HietalasALMBank.Test
             var acutalValue = bankRepository.CheckInputAmount(amount);
             Assert.Equal(expectedValue, acutalValue);
         }
+
+        [Fact]
+        public void Transfer()
+        {
+            Account account = new Account() { AccountNumber = "1", Balance = 100 };
+            Account to = new Account() { AccountNumber = "2", Balance = 200 };
+
+            account.Transfer(to, 50);
+
+            double expected = 50;
+            double actual = account.Balance;
+
+            Assert.Equal(expected, actual);
+        }
+
+        [Theory]
+        [InlineData(false, 200)]
+        [InlineData(true, 50)]
+        public void Try_To_Move_To_Much_Money(bool expected, double amount)
+        {
+            Account account = new Account() { AccountNumber = "1", Balance = 100 };
+            Account to = new Account() { AccountNumber = "2", Balance = 200 };           
+
+            bool actual = account.Transfer(to, amount);
+
+            Assert.Equal(expected, actual);
+        }
                
     }
 }
