@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HietalasALMBank.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,34 +8,59 @@ namespace HietalasALMBank.Repositories
 {
     public class BankRepository
     {
-        public double Deposit(double balance, double amount)
+        private List<Customer> customers;
+
+        public BankRepository()
         {
-            return balance += amount;
+            customers = Startup.Dummydata;
         }
 
-        public double Withdraw(double balance, double amount)
+        public double Deposit(Account account, string amount)
         {
-            return balance -= amount;
+            account.Balance += double.Parse(amount);
+            return account.Balance;
         }
 
-        public bool CheckIfWithdrawIsOk(double balance, double amount)
+        public double Withdraw(Account account, string amount)
         {
-            if (balance >= amount && amount > 0) {
+            account.Balance -= double.Parse(amount);
+            return account.Balance;           
+        }
+
+        public bool CheckIfWithdrawIsOk(double balance, string amount)
+        {
+            if (balance >= double.Parse(amount) && double.Parse(amount) > 0) {
                 return true;
             }
             return false;
         }
 
-        public bool CheckIfDepositIsOk(double balance, double amount)
+        public bool CheckInputAmount(string amount)
         {
-            if (amount > 0)
+            double checkInputAmount;
+            double.TryParse(amount, out checkInputAmount);
+
+            if (checkInputAmount > 0)
             {
                 return true;
-            }
+            }          
             return false;
         }
 
+        public Account GetAccount(string accountNumber)
+        {
+            foreach (var c in customers)
+            {
+                Account account = c.AccountList.Find(x => x.AccountNumber == accountNumber);
 
+                if (account != null)
+                {
+                    return account;
+                }
+            }
+
+            return null;
+        }
 
 
     }
